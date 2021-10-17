@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <>
-      1.9
+      1.11
       <Header text='give feedback' />
       <Button increment={() => setGood(good + 1)} text='good' />
       <Button increment={() => setNeutral(neutral + 1)} text='neutral' />
