@@ -17,9 +17,10 @@ const Button = (prop) => {
 const Stats = (prop) => {
   return (
     <>
-      <div>
-        {prop.text}: {prop.count} {prop.percent}
-      </div>
+      <tr>
+        <td>{prop.text}</td>
+        <td>{prop.count}</td>
+      </tr>
     </>
   )
 }
@@ -31,12 +32,20 @@ const Statistics = ({ good, bad, neutral }) => {
   }
   return (
     <>
-      <Stats count={good} text='good' />
-      <Stats count={neutral} text='neutral' />
-      <Stats count={bad} text='bad' />
-      <Stats count={all} text='all' />
-      <Stats count={(good - bad) / all} text='average' />
-      <Stats count={(good / all) * 100} percent='%' text='positive' />
+      <table>
+        <tbody>
+          <Stats count={good} text='good' />
+          <Stats count={neutral} text='neutral' />
+          <Stats count={bad} text='bad' />
+          <Stats count={all} text='all' />
+          <Stats count={(good - bad) / all} text='average' />
+          <Stats
+            count={`${(good / all) * 100} %`}
+            percent='%'
+            text='positive'
+          />
+        </tbody>
+      </table>
     </>
   )
 }
